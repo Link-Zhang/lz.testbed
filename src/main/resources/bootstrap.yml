@@ -1,0 +1,41 @@
+server:
+  port: ${server-port:20519}
+management:
+  server:
+    port: ${server-port:20519}
+    address: ${server-address:127.0.0.1}
+  endpoints:
+    web:
+      exposure:
+        include: health
+spring:
+  application:
+    name: testbed
+  output:
+    ansi:
+      enabled: always
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+        serviceName: ${spring.application.name}
+        tags: version=1.0,author=linkzhang
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
+      host: ${consul-host:127.0.0.1}
+      port: ${consul-port:8500}
+  mvc:
+    date-format: yyyy-MM-dd
+    dispatch-options-request: true
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd
+feign:
+  hystrix:
+    enabled: false
+  httpclient:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
