@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: hello
+  output:
+    ansi:
+      enabled: detect
+#  security:
+#    user:
+#      name: actuator
+#      password: actuator
+#      roles: ENDPOINT_ADMIN
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:server.p12
+    key-store-password: keystore
+    key-store-type: PKCS12
+info:
+  app:
+    name: ${spring.application.name}
+    port: ${server.port}
+    version: @project.version@
+    jdk: @java.version@
+    cloud: @spring-cloud.version@
+management:
+  server:
+    port: 8444
+    ssl:
+      enabled: true
+      key-store: classpath:management.p12
+      key-store-password: keystore
+      key-store-type: PKCS12
+  endpoints:
+    web:
+      base-path: /
+      cors:
+        allowed-origins: '*'
+        allowed-methods: '*'

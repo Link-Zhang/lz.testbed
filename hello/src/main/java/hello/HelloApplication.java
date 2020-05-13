@@ -1,5 +1,4 @@
-package cn.sh.lz.testbed;
-
+package hello;
 /***
  *                    _ooOoo_
  *                   o8888888o
@@ -52,57 +51,29 @@ package cn.sh.lz.testbed;
  *                  Happy Hacking Key Board
  */
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.AuthorizationScopeBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.*;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spi.service.contexts.SecurityContext;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import java.util.ArrayList;
-
-import static com.google.common.collect.Lists.newArrayList;
+import javafx.scene.Parent;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * Created by Link at 10:47 on 9/12/19.
  */
-@Configuration
-@EnableSwagger2
-public class TestbedSwagger {
-    @Bean
-    public Docket createRestApi() {
-        AuthorizationScope[] authScopes = new AuthorizationScope[1];
-        authScopes[0] = new AuthorizationScopeBuilder()
-                .scope("read")
-                .description("read access")
-                .build();
-        SecurityReference securityReference = SecurityReference.builder()
-                .reference("testbed")
-                .scopes(authScopes)
-                .build();
-        ArrayList<SecurityContext> securityContexts = newArrayList(SecurityContext.builder().securityReferences
-                (newArrayList(securityReference)).build());
-        return new Docket(DocumentationType.SWAGGER_2)
-                .securitySchemes(newArrayList(new BasicAuth("testbed")))
-                .securityContexts(securityContexts)
-                .groupName("server-api")
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.sh.lz.testbed.feign.controller"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+@SpringBootApplication
+public class HelloApplication {
+    public static void main(String[] args) {
+//        Mode 1:
+//        SpringApplication.run(HelloApplication.class, args);
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Testbed Project Restful API")
-                .version("1.0")
-                .contact(new Contact("Link Zhang", "", "Link.Zhang.0@gmail.com"))
-                .build();
+//        Mode 2:
+//        SpringApplication app = new SpringApplication(HelloApplication.class);
+//        app.setBannerMode(Banner.Mode.OFF);
+//        app.run(args);
+
+//        Mode 3:
+        new SpringApplicationBuilder()
+                .sources(Parent.class)
+                .child(HelloApplication.class)
+//                .bannerMode(Banner.Mode.OFF)
+                .run(args);
     }
 }

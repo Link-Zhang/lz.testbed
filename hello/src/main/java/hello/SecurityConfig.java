@@ -1,4 +1,4 @@
-package cn.sh.lz.testbed.feign.interceptor;
+package hello;
 
 /***
  *                    _ooOoo_
@@ -52,68 +52,22 @@ package cn.sh.lz.testbed.feign.interceptor;
  *                  Happy Hacking Key Board
  */
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 /**
- * Created by Link at 10:58 on 9/12/19.
+ * Created by Link at 10:09 on 4/13/20.
  */
-@Component
-public class FeignRequestInterceptor {
-//     Todo : Fix it.
-
+@EnableWebSecurity
+public class SecurityConfig {
+    @Autowired
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .inMemoryAuthentication()
+//                .passwordEncoder(new BCryptPasswordEncoder())
+                .withUser("user")
+                .password("{noop}password")
+                .roles("USER");
+    }
 }
-//        implements RequestInterceptor {
-//    private static final Logger log = LoggerFactory.getLogger(FeignRequestInterceptor.class);
-//
-//    @Resource
-//    private ObjectMapper objectMapper;
-//
-//    @Override
-//    public void apply(RequestTemplate template) {
-//        if (HttpMethod.GET.name().equals(template.method())
-//                && null != template.body()) {
-//            try {
-//                JsonNode jsonNode = objectMapper.readTree(template.body());
-//                template.body(null);
-//                Map<String, Collection<String>> queries = new HashMap<>();
-//                buildQuery(jsonNode, "", queries);
-//                template.queries(queries);
-//            } catch (IOException e) {
-//                log.error("【拦截GET请求POJO方式】-出错了：{}", JSON.toJSONString(e));
-//                throw new RuntimeException();
-//            }
-//        }
-//    }
-//
-//    private void buildQuery(JsonNode jsonNode, String path, Map<String, Collection<String>> queries) {
-//        if (!jsonNode.isContainerNode()) {
-//            if (jsonNode.isNull()) {
-//                return;
-//            }
-//            Collection<String> values = queries.get(path);
-//            if (null == values) {
-//                values = new ArrayList<>();
-//                queries.put(path, values);
-//            }
-//            values.add(jsonNode.asText());
-//            return;
-//        }
-//        if (jsonNode.isArray()) {
-//            Iterator<JsonNode> it = jsonNode.elements();
-//            while (it.hasNext()) {
-//                buildQuery(it.next(), path, queries);
-//            }
-//        } else {
-//            Iterator<Map.Entry<String, JsonNode>> it = jsonNode.fields();
-//            while (it.hasNext()) {
-//                Map.Entry<String, JsonNode> entry = it.next();
-//                if (StringUtils.hasText(path)) {
-//                    buildQuery(entry.getValue(), path + "." + entry.getKey(), queries);
-//                } else {
-//                    buildQuery(entry.getValue(), entry.getKey(), queries);
-//                }
-//            }
-//        }
-//    }
-//}
-

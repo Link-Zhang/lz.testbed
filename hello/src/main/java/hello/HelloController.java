@@ -1,5 +1,4 @@
-package cn.sh.lz.testbed.feign.controller;
-
+package hello;
 /***
  *                    _ooOoo_
  *                   o8888888o
@@ -52,40 +51,36 @@ package cn.sh.lz.testbed.feign.controller;
  *                  Happy Hacking Key Board
  */
 
-import cn.sh.lz.testbed.clients.TestbedClient;
-import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
- * Created by Link at 10:58 on 9/12/19.
+ * Created by Link at 14:43 on 4/2/20.
  */
-@CrossOrigin(origins = "*", allowCredentials = "true")
-@RequestMapping("/feign/history")
 @RestController
-public class FeignController {
-    @Autowired
-    private DiscoveryClient discoveryClient;
+@RequestMapping(path = "/hello")
+public class HelloController {
+    private static Logger log = LoggerFactory.getLogger(HelloApplication.class);
 
-    @Autowired
-    private TestbedClient testbedClient;
-
-    @ApiOperation(value = "试验台微服务测试", notes = "试验台微服务测试")
-    @GetMapping(value = "/hello")
-    public String hello() {
-        return testbedClient.hello();
+    @GetMapping("/greeting")
+    public String greet() {
+        log.info("Access hello /greeting");
+        List<String> greetings = Arrays.asList("Hi!", "Hello!", "你好!");
+        Random rand = new Random();
+        int randomNum = rand.nextInt(greetings.size());
+        return greetings.get(randomNum);
     }
 
-    @ApiOperation(value = "试验台微服务实例", notes = "试验台微服务实例")
-    @GetMapping(value = "/instances")
-    public List<ServiceInstance> instances() {
-        return discoveryClient.getInstances("testbed");
+    @GetMapping("/")
+    public String home() {
+        log.info("Access hello /");
+        return "Hi!";
     }
 }
