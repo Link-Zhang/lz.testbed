@@ -66,7 +66,7 @@ public class SecurityConfig {
         auth
                 .inMemoryAuthentication()
 //                .passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("user")
+                .withUser("username")
                 .password("{noop}password")
                 .roles("USER");
     }
