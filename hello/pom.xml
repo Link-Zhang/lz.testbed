@@ -13,7 +13,7 @@
     <version>0.0.1.RELEASE</version>
 
     <properties>
-
+        <!--<spring-core-version>5.2.4.RELEASE</spring-core-version>-->
     </properties>
 
     <dependencies>
@@ -37,8 +37,8 @@
 
         <!--Spring WebFlux-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-webflux</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-webflux</artifactId>-->
         <!--</dependency>-->
     </dependencies>
 

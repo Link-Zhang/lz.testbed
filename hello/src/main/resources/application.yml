@@ -4,11 +4,6 @@ spring:
   output:
     ansi:
       enabled: detect
-#  security:
-#    user:
-#      name: actuator
-#      password: actuator
-#      roles: ENDPOINT_ADMIN
 server:
   port: 8443
   ssl:
