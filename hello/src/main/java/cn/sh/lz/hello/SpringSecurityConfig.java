@@ -75,9 +75,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Value("${management.server.port}")
-    private int managementPort;
-
     @Value("${server.port}")
     private int serverPort;
 
@@ -96,12 +93,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests(
                 authorizeRequests -> authorizeRequests
-                        .requestMatchers(forPortAndPath(managementPort, "/")).hasRole("ADMIN")
-                        .requestMatchers(forPortAndPath(managementPort, "/swagger-ui.html")).denyAll()
+                        .requestMatchers(forPortAndPath(serverPort, "/management")).hasRole("ADMIN")
                         .requestMatchers(forPortAndPath(serverPort, "/swagger-ui.html")).hasRole("ADMIN")
                         .requestMatchers(forPortAndPath(serverPort, HttpMethod.GET, "/hello/greeting")).hasRole("USER")
                         .requestMatchers(forPortAndPath(serverPort, HttpMethod.GET, "/hello/**")).permitAll()
-                        .requestMatchers(forPortAndPath(serverPort, HttpMethod.PUT, "/hello/**")).hasRole("USER")
                         .anyRequest().permitAll()
         ).formLogin(Customizer.withDefaults());
     }
