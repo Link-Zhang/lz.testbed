@@ -7,12 +7,15 @@ package cn.sh.lz.cig.C1P6;
  */
 public class HanoiMain {
     public static void main(String[] args) {
-        Hanoi hanoi = new Hanoi();
-        System.out.println("Total steps is " + hanoi.hanoi00(3, "left", "middle", "right"));
-        System.out.println("Total steps is " + hanoi.hanoi0(3, "left", "middle", "right"));
+        SimpleHanoi simpleHanoi = new SimpleHanoi();
+        System.out.println("Total steps is " + simpleHanoi.hanoi(3, "left", "middle", "right"));
 
-//        System.out.println("Total steps is " + hanoi.hanoi(1, "left", "middle", "right"));
-//        System.out.println("Total steps is " + hanoi.hanoi(2, "left", "middle", "right"));
+        SimpleHanoi1 simpleHanoi1 = new SimpleHanoi1();
+        System.out.println("Total steps is " + simpleHanoi1.hanoi(3, "left", "middle", "right"));
+
+        Hanoi hanoi = new Hanoi();
+        System.out.println("Total steps is " + hanoi.hanoi(1, "left", "middle", "right"));
+        System.out.println("Total steps is " + hanoi.hanoi(2, "left", "middle", "right"));
         System.out.println("Total steps is " + hanoi.hanoi(3, "left", "middle", "right"));
     }
 }
