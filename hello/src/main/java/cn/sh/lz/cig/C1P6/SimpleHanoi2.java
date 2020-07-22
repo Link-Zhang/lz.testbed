@@ -5,7 +5,7 @@ package cn.sh.lz.cig.C1P6;
  * @date 2020/07/21
  * @time 09:07
  */
-public class SimpleHanoi1 {
+public class SimpleHanoi2 {
 
     public int hanoi(int number, String left, String middle, String right) {
         if (number < 1)
