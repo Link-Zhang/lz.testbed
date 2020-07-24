@@ -1,2 +1,2 @@
 # lz.testbed
-Link Zhang's Spring Testbed
+Link Zhang's Testbed
