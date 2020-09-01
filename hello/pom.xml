@@ -15,7 +15,7 @@
     <properties>
         <spring-boot-starter-web.version>2.3.3.RELEASE</spring-boot-starter-web.version>
         <spring-boot-starter-actuator.version>2.3.3.RELEASE</spring-boot-starter-actuator.version>
-        <spring-boot-starter-security>2.3.3.RELEASE</spring-boot-starter-security>
+        <spring-boot-starter-security.version>2.3.3.RELEASE</spring-boot-starter-security.version>
     </properties>
 
     <dependencies>
