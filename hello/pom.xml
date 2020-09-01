@@ -13,7 +13,9 @@
     <version>0.0.1.RELEASE</version>
 
     <properties>
-        <!--<spring-core-version>5.2.4.RELEASE</spring-core-version>-->
+        <spring-boot-starter-web.version>2.3.3.RELEASE</spring-boot-starter-web.version>
+        <spring-boot-starter-actuator.version>2.3.3.RELEASE</spring-boot-starter-actuator.version>
+        <spring-boot-starter-security>2.3.3.RELEASE</spring-boot-starter-security>
     </properties>
 
     <dependencies>
@@ -21,25 +23,23 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
         </dependency>
 
         <!--Spring Actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot-starter-actuator.version}</version>
         </dependency>
 
         <!--Spring Security-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring-boot-starter-security.version}</version>
         </dependency>
 
-        <!--Spring WebFlux-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-webflux</artifactId>-->
-        <!--</dependency>-->
     </dependencies>
 
     <build>
