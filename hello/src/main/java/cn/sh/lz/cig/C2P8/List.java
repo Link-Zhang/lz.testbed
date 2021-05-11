@@ -54,15 +54,13 @@ public class List {
         if (null != equalTail) {
             equalTail.setNext(bigHead);
         }
-
         return null != smallHead ? smallHead : null != equalHead ? equalHead : bigHead;
     }
 
     //    时间复杂度O(n)，空间复杂度O(n)
     public LinkedNode listPartitionWithoutOrder(LinkedNode head, int pivot) {
-        if (null == head) {
+        if (null == head)
             return head;
-        }
         LinkedNode cur = head;
         int i = 0;
         while (null != cur) {

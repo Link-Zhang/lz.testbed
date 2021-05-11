@@ -6,7 +6,7 @@ package cn.sh.lz.cig.C2P1;
  * @time 10:43
  */
 public class CommonPart {
-    //        public void printCommonPart(LinkedNode head1, LinkedNode head2) {
+    //        public void printCommonPart(Number head1, Number head2) {
 //        while (null != head1 && null != head2) {
 //            if (head1.getData() < head2.getData()) {
 //                head1 = head1.getNext();
@@ -20,7 +20,7 @@ public class CommonPart {
 //        }
 //        System.out.println("null");
 //    }
-    
+
     public void printCommonPart(LinkedNode head1, LinkedNode head2) {
         while (null != head1 && null != head2 && head1.getData() != head2.getData()) {
             if (head1.getData() < head2.getData()) {
