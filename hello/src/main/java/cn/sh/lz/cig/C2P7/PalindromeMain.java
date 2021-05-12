@@ -1,7 +1,7 @@
 package cn.sh.lz.cig.C2P7;
 
-import cn.sh.lz.cig.C2P1.LinkedNode;
-import cn.sh.lz.cig.C2P1.Node;
+import cn.sh.lz.cig.C2C.LinkedNode;
+import cn.sh.lz.cig.C2C.Node;
 
 /***
  * @author Link
@@ -10,13 +10,12 @@ import cn.sh.lz.cig.C2P1.Node;
  */
 public class PalindromeMain {
     public static void main(String[] args) {
-        int[] l1 = new int[]{1, 2, 3, 2, 1};
+        int[] l1 = new int[]{1, 2, 2, 1};
         Node node = new Node();
         LinkedNode head = node.build(l1);
         System.out.println("The LinkedList:");
         node.print(head);
         Palindrome palindrome = new Palindrome();
         System.out.println(palindrome.isPalindrome(head));
-        node.print(head);
     }
 }

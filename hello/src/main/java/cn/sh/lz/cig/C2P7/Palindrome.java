@@ -1,6 +1,6 @@
 package cn.sh.lz.cig.C2P7;
 
-import cn.sh.lz.cig.C2P1.LinkedNode;
+import cn.sh.lz.cig.C2C.LinkedNode;
 
 import java.util.Stack;
 
@@ -10,6 +10,7 @@ import java.util.Stack;
  * @time 10:26
  */
 public class Palindrome {
+    //    todo: 问题
     //    时间复杂度O(n),空间复杂度O(1)
     public boolean isPalindrome(LinkedNode head) {
         if (null == head || null == head.getNext()) {
@@ -55,7 +56,7 @@ public class Palindrome {
     }
 
     //    时间复杂度O(n),空间复杂度O(n)
-    public boolean isPalindrome1(LinkedNode head) {
+    public boolean isPalindrome2(LinkedNode head) {
         Stack<LinkedNode> stack = new Stack<>();
         LinkedNode cur = head;
         while (null != cur) {
@@ -72,7 +73,7 @@ public class Palindrome {
     }
 
     //    时间复杂度O(n),空间复杂度O(n)
-    public boolean isPalindrome2(LinkedNode head) {
+    public boolean isPalindrome3(LinkedNode head) {
         if (null == head || null == head.getNext()) {
             return true;
         }

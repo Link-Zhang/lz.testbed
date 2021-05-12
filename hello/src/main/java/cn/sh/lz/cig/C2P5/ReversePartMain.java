@@ -1,15 +1,15 @@
 package cn.sh.lz.cig.C2P5;
 
-import cn.sh.lz.cig.C2P1.LinkedNode;
-import cn.sh.lz.cig.C2P1.Node;
-import cn.sh.lz.cig.C2P2.DoubleLinkedNode;
+import cn.sh.lz.cig.C2C.LinkedNode;
+import cn.sh.lz.cig.C2C.Node;
+import cn.sh.lz.cig.C2C.DoubleLinkedNode;
 
 /***
  * @author Link
  * @date 2020/08/25
  * @time 10:47
  */
-public class ReverseMain {
+public class ReversePartMain {
     public static void main(String[] args) {
         int[] l1 = new int[]{1, 2, 3, 4, 5};
         Node node = new Node();
@@ -17,8 +17,7 @@ public class ReverseMain {
         System.out.println("The Original LinkedList:");
         node.print(head);
 
-        Reverse reverse = new Reverse();
-        head = reverse.reversePart(head, 1, 4);
+        head = node.reversePart(head, 1, 4);
         System.out.println("Part Reversed LinkedList:");
         node.print(head);
 
@@ -26,7 +25,7 @@ public class ReverseMain {
         System.out.println("The Original DoubleLinkedList:");
         node.print(doubleHead);
 
-        doubleHead = reverse.reversePart(doubleHead, 1, 4);
+        doubleHead = node.reversePart(doubleHead, 1, 4);
         System.out.println("Part Reversed DoubleLinkedList:");
         node.print(doubleHead);
     }

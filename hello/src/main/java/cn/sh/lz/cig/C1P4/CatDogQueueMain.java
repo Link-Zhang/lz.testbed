@@ -8,8 +8,8 @@ package cn.sh.lz.cig.C1P4;
 public class CatDogQueueMain {
     public static void main(String[] args) {
         CatDogQueue queue = new CatDogQueue();
-        queue.add(new Cat());
-        queue.add(new Dog());
+        queue.offer(new Cat());
+        queue.offer(new Dog());
         System.out.println(queue.isEmpty());
         System.out.println(queue.isCatEmpty());
         System.out.println(queue.isDogEmpty());

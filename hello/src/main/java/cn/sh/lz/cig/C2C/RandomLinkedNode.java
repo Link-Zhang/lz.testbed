@@ -1,4 +1,4 @@
-package cn.sh.lz.cig.C2P1;
+package cn.sh.lz.cig.C2C;
 
 import lombok.Getter;
 import lombok.NonNull;
@@ -7,15 +7,17 @@ import lombok.Setter;
 
 /***
  * @author Link
- * @date 2020/07/29
- * @time 13:52
+ * @date 2020/08/26
+ * @time 15:04
  */
 @Setter
 @Getter
 @RequiredArgsConstructor()
-public class LinkedNode {
+public class RandomLinkedNode {
     @NonNull
     private int data;
 
-    private LinkedNode next;
+    private RandomLinkedNode next;
+
+    private RandomLinkedNode rand;
 }

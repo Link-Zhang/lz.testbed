@@ -8,11 +8,11 @@ package cn.sh.lz.cig.C1P4;
 public class Pet {
     private String type;
 
-    public Pet(String type){
-        this.type=type;
+    public Pet(String type) {
+        this.type = type;
     }
 
-    public String getPetType(){
+    public String getPetType() {
         return this.type;
     }
 }

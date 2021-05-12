@@ -1,5 +1,7 @@
 package cn.sh.lz.cig.C2P9;
 
+import cn.sh.lz.cig.C2C.RandomLinkedNode;
+
 import java.util.HashMap;
 import java.util.Optional;
 

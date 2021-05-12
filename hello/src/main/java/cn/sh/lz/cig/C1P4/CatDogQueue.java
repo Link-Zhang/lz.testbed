@@ -20,7 +20,7 @@ public class CatDogQueue {
         this.count = 0;
     }
 
-    public void add(Pet pet) {
+    public void offer(Pet pet) {
         if ("cat".equals(pet.getPetType())) {
             this.catQ.add(new PetEnterQueue(pet, this.count++));
         } else if ("dog".equals(pet.getPetType())) {

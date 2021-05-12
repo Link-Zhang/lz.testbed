@@ -1,7 +1,7 @@
 package cn.sh.lz.cig.C2P3;
 
-import cn.sh.lz.cig.C2P1.LinkedNode;
-import cn.sh.lz.cig.C2P1.Node;
+import cn.sh.lz.cig.C2C.LinkedNode;
+import cn.sh.lz.cig.C2C.Node;
 
 /***
  * @author Link
