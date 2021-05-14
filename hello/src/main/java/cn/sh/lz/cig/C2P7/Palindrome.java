@@ -1,6 +1,7 @@
 package cn.sh.lz.cig.C2P7;
 
 import cn.sh.lz.cig.C2C.LinkedNode;
+import cn.sh.lz.cig.C2C.Node;
 
 import java.util.Stack;
 
@@ -10,53 +11,8 @@ import java.util.Stack;
  * @time 10:26
  */
 public class Palindrome {
-    //    todo: 问题
-    //    时间复杂度O(n),空间复杂度O(1)
-    public boolean isPalindrome(LinkedNode head) {
-        if (null == head || null == head.getNext()) {
-            return true;
-        }
-        LinkedNode n1 = head;
-        LinkedNode n2 = head;
-        while (null != n2.getNext() && null != n2.getNext().getNext()) {
-            n1 = n1.getNext();
-            n2 = n2.getNext().getNext();
-        }
-        n2 = n1.getNext();
-        n1.setNext(null);
-        LinkedNode n3 = null;
-        while (null != n2) {
-//            右半反转
-            n3 = n2.getNext();
-            n2.setNext(n1);
-            n1 = n2;
-            n2 = n3;
-        }
-        n3 = n1; //rightHead
-        n2 = head; //leftHead
-        boolean result = true;
-        while (null != n1 && null != n2) {
-            if (n1.getData() != n2.getData()) {
-                result = false;
-                break;
-            }
-            n1 = n1.getNext();
-            n2 = n2.getNext();
-        }
-//      恢复右半
-        n1 = n3.getNext();
-        n3.setNext(null);
-        while (null != n1) {
-            n2 = n1.getNext();
-            n1.setNext(n3);
-            n3 = n1;
-            n1 = n2;
-        }
-        return true;
-    }
-
     //    时间复杂度O(n),空间复杂度O(n)
-    public boolean isPalindrome2(LinkedNode head) {
+    public boolean isPalindrome(LinkedNode head) {
         Stack<LinkedNode> stack = new Stack<>();
         LinkedNode cur = head;
         while (null != cur) {
@@ -73,7 +29,7 @@ public class Palindrome {
     }
 
     //    时间复杂度O(n),空间复杂度O(n)
-    public boolean isPalindrome3(LinkedNode head) {
+    public boolean isPalindrome2(LinkedNode head) {
         if (null == head || null == head.getNext()) {
             return true;
         }
@@ -95,5 +51,35 @@ public class Palindrome {
             head = head.getNext();
         }
         return true;
+    }
+
+    //    时间复杂度O(n),空间复杂度O(1)
+    public boolean isPalindrome3(LinkedNode head) {
+        if (null == head || null == head.getNext()) {
+            return true;
+        }
+        LinkedNode leftNode = head;
+        LinkedNode middleLeftNode = head;
+        LinkedNode rightNode = head;
+        while (null != rightNode.getNext() && null != rightNode.getNext().getNext()) {
+            middleLeftNode = middleLeftNode.getNext();
+            rightNode = rightNode.getNext().getNext();
+        }
+        LinkedNode middleRightNode = middleLeftNode.getNext();
+        middleLeftNode.setNext(null);
+        Node node = new Node();
+        LinkedNode reversedRightHead = node.reverse(middleRightNode);
+        boolean result = true;
+        while (null != leftNode && null != rightNode) {
+            if (leftNode.getData() != rightNode.getData()) {
+                result = false;
+                break;
+            }
+            leftNode = leftNode.getNext();
+            rightNode = rightNode.getNext();
+        }
+        middleRightNode = node.reverse(reversedRightHead);
+        middleLeftNode.setNext(middleRightNode);
+        return result;
     }
 }

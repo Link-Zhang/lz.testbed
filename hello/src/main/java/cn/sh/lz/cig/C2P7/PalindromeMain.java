@@ -10,12 +10,12 @@ import cn.sh.lz.cig.C2C.Node;
  */
 public class PalindromeMain {
     public static void main(String[] args) {
-        int[] l1 = new int[]{1, 2, 2, 1};
+        int[] l1 = new int[]{1, 2, 3, 2, 1};
         Node node = new Node();
         LinkedNode head = node.build(l1);
         System.out.println("The LinkedList:");
         node.print(head);
         Palindrome palindrome = new Palindrome();
-        System.out.println(palindrome.isPalindrome(head));
+        System.out.println(palindrome.isPalindrome3(head));
     }
 }

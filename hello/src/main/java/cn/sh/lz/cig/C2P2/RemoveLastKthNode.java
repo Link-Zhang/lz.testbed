@@ -33,7 +33,7 @@ public class RemoveLastKthNode {
         return head;
     }
 
-    public LinkedNode removeLastKthNode1(LinkedNode head, int k) {
+    public LinkedNode removeLastKthNode2(LinkedNode head, int k) {
         if (null == head || 1 > k)
             return head;
         LinkedNode cur = head;
@@ -85,7 +85,7 @@ public class RemoveLastKthNode {
         return head;
     }
 
-    public DoubleLinkedNode removeLastKthNode1(DoubleLinkedNode head, int k) {
+    public DoubleLinkedNode removeLastKthNode2(DoubleLinkedNode head, int k) {
         if (null == head || k < 1)
             return head;
         DoubleLinkedNode cur = head;

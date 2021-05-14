@@ -7,17 +7,6 @@ import cn.sh.lz.cig.C2C.Node;
  * Created by Link at 09:40 on 2021/05/11.
  */
 public class NumberMain {
-//    public static void print(NumberLinkedNode head) {
-//        NumberLinkedNode cur = head;
-//        while (null != cur) {
-//            if (head == cur)
-//                System.out.print(cur.getValue());
-//            System.out.print("->" + Optional.ofNullable(cur.getNext()).map(NumberLinkedNode::getValue).orElse(null));
-//            cur = cur.getNext();
-//        }
-//        System.out.println();
-//    }
-
     public static void main(String[] args) {
         int[] l1 = new int[]{9, 3, 7};
         int[] l2 = new int[]{6, 3};
@@ -30,7 +19,6 @@ public class NumberMain {
         node.print(head1);
         node.print(head2);
         node.print(result1);
-//        todo : fix it
         node.print(result2);
     }
 }

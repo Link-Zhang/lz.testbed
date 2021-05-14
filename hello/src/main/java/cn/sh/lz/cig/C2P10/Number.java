@@ -79,7 +79,7 @@ public class Number {
     }
 
     //    时间复杂度O(n),空间复杂度O(1)
-    //    head1>head2
+    //    head1>=head2
     public LinkedNode minus(LinkedNode head1, LinkedNode head2) {
         Node node = new Node();
         head1 = node.reverse(head1);
@@ -92,19 +92,21 @@ public class Number {
         LinkedNode c2 = head2;
         LinkedNode cur = null;
         LinkedNode pre = null;
-        while (null != c2) {
+        while (null != c1 || null != c2) {
             n1 = null != c1 ? c1.getData() : 0;
-            n2 = c2.getData();
-            n = n1 - n2 + bo;
+            n2 = null != c2 ? c2.getData() : 0;
+            n = n1 - n2 - bo;
             if (n < 0) {
-                bo--;
+                bo = 1;
                 n = n + 10;
+            } else {
+                bo = 0;
             }
             cur = new LinkedNode(n);
             cur.setNext(pre);
             pre = cur;
             c1 = null != c1 ? c1.getNext() : null;
-            c2 = c2.getNext();
+            c2 = null != c2 ? c2.getNext() : null;
         }
         node.reverse(head1);
         node.reverse(head2);
