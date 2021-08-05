@@ -1,0 +1,219 @@
+devices:
+#  - host: 10.166.52.11
+#    port: 22
+#    username: admin
+#    password: Shch@1128@&*(
+#    commands:
+#      - screen-length disable
+#      - display current-configuration
+#      - display irf
+
+# 以下完全正常
+  - host: 10.31.255.2
+  - host: 10.31.251.201
+  - host: 10.31.251.21
+  - host: 10.31.251.1
+  - host: 10.31.251.12
+  - host: 10.31.251.254
+  - host: 10.32.255.254
+  - host: 10.32.255.22
+  - host: 10.32.255.23
+  - host: 10.32.255.17
+  - host: 10.32.255.18
+  - host: 10.33.255.254
+  - host: 10.33.255.1
+  - host: 10.30.31.144
+
+  - host: 10.33.255.2
+    commands:
+      - show running-config
+  - host: 10.30.61.20
+    commands:
+      - show running-config
+  - host: 10.30.58.15
+    commands:
+      - show running-config
+  - host: 10.30.31.143
+    commands:
+      - show running-config
+  - host: 10.30.70.33
+    commands:
+      - show running-config
+  - host: 10.32.255.132
+    commands:
+      - show running-config
+
+# 以下勉强能跑
+  - host: 10.30.61.18
+    commands:
+      - display current-configuration
+  - host: 10.30.61.19
+    commands:
+      - display current-configuration
+  - host: 10.30.61.22
+    commands:
+      - display current-configuration
+  - host: 10.31.255.5
+    commands:
+      - display current-configuration
+  - host: 10.32.255.1
+    commands:
+      - display current-configuration
+  - host: 10.32.255.2
+    commands:
+      - display current-configuration
+  - host: 10.32.255.3
+    commands:
+      - display current-configuration
+  - host: 10.32.255.4
+    commands:
+      - display current-configuration
+  - host: 10.32.255.5
+    commands:
+      - display current-configuration
+  - host: 10.32.255.131
+    commands:
+      - display current-configuration
+  - host: 10.32.255.11
+    commands:
+      - display current-configuration
+  - host: 10.32.255.12
+    commands:
+      - display current-configuration
+  - host: 10.32.255.13
+    commands:
+      - display current-configuration
+  - host: 10.32.255.14
+    commands:
+      - display current-configuration
+  - host: 10.32.255.15
+    commands:
+      - display current-configuration
+  - host: 10.32.255.16
+    commands:
+      - display current-configuration
+  - host: 10.30.58.252
+    commands:
+      - display current-configuration
+  - host: 10.30.58.253
+    commands:
+      - display current-configuration
+  - host: 10.30.58.1
+    commands:
+      - display current-configuration
+  - host: 10.30.58.4
+    commands:
+      - display current-configuration
+  - host: 10.30.58.5
+    commands:
+      - display current-configuration
+  - host: 10.30.58.7
+    commands:
+      - display current-configuration
+  - host: 10.30.58.11
+    commands:
+      - display current-configuration
+  - host: 10.30.58.12
+    commands:
+      - display current-configuration
+  - host: 10.30.58.13
+    commands:
+      - display current-configuration
+  - host: 10.30.58.14
+    commands:
+      - display current-configuration
+  - host: 10.30.58.17
+    commands:
+      - display current-configuration
+  - host: 10.30.58.19
+    commands:
+      - display current-configuration
+  - host: 10.30.31.129
+    commands:
+      - display current-configuration
+  - host: 10.30.31.130
+    commands:
+      - display current-configuration
+  - host: 10.30.31.131
+    commands:
+      - display current-configuration
+  - host: 10.30.31.132
+    commands:
+      - display current-configuration
+  - host: 10.30.31.133
+    commands:
+      - display current-configuration
+  - host: 10.30.31.134
+    commands:
+      - display current-configuration
+  - host: 10.30.31.135
+    commands:
+      - display current-configuration
+  - host: 10.30.31.136
+    commands:
+      - display current-configuration
+  - host: 10.30.31.137
+    commands:
+      - display current-configuration
+  - host: 10.30.31.138
+    commands:
+      - display current-configuration
+  - host: 10.30.31.139
+    commands:
+      - display current-configuration
+  - host: 10.30.31.140
+    commands:
+      - display current-configuration
+  - host: 10.30.31.141
+    commands:
+      - display current-configuration
+  - host: 10.30.31.142
+    commands:
+      - display current-configuration
+  - host: 10.30.70.252
+    commands:
+      - display current-configuration
+  - host: 10.30.70.253
+    commands:
+      - display current-configuration
+  - host: 10.30.70.1
+    commands:
+      - display current-configuration
+  - host: 10.30.70.9
+    commands:
+      - display current-configuration
+  - host: 10.30.70.10
+    commands:
+      - display current-configuration
+  - host: 10.30.70.11
+    commands:
+      - display current-configuration
+  - host: 10.30.70.12
+    commands:
+      - display current-configuration
+  - host: 10.30.70.13
+    commands:
+      - display current-configuration
+  - host: 10.30.70.19
+    commands:
+      - display current-configuration
+  - host: 10.30.70.20
+    commands:
+      - display current-configuration
+  - host: 10.30.70.21
+    commands:
+      - display current-configuration
+  - host: 10.30.70.24
+    commands:
+      - display current-configuration
+  - host: 10.30.70.25
+    commands:
+      - display current-configuration
+  - host: 10.30.70.31
+    commands:
+      - display current-configuration
+  - host: 10.33.255.3
+    commands:
+      - display current-configuration
+
+
