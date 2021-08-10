@@ -78,14 +78,4 @@ public class SSHUtil {
         path = path + File.separator + host + "_" + fileSuffix + FILE_EXTENTION;
         Files.write(Paths.get(path), content.getBytes(StandardCharsets.UTF_8));
     }
-
-//    public static void main(String[] args) throws Exception {
-//        Server remote = new Server();
-//        long start = System.currentTimeMillis();
-//        String result = SSHUtil.remoteExecute(remote);
-//        long end = System.currentTimeMillis();
-//        NumberFormat formatter = new DecimalFormat("#0.00000");
-//        System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
-//        SSHUtil.write(remote.getHost(), result);
-//    }
 }

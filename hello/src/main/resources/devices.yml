@@ -1,4 +1,5 @@
 devices:
+# 格式示例:
 #  - host: 10.166.52.11
 #    port: 22
 #    username: admin
@@ -9,125 +10,81 @@ devices:
 #      - display irf
 
 # 以下完全正常
-  - host: 10.31.255.2
-  - host: 10.31.251.201
-  - host: 10.31.251.21
+  - host: 10.30.31.144
   - host: 10.31.251.1
   - host: 10.31.251.12
+  - host: 10.31.251.21
+  - host: 10.31.251.201
   - host: 10.31.251.254
-  - host: 10.32.255.254
-  - host: 10.32.255.22
-  - host: 10.32.255.23
+  - host: 10.31.255.2
+  - host: 10.32.12.1
+  - host: 10.32.12.95
+  - host: 10.32.13.11
+  - host: 10.32.13.12
+  - host: 10.32.13.21
+  - host: 10.32.13.22
+  - host: 10.32.13.23
+  - host: 10.32.13.24
+  - host: 10.32.13.25
+  - host: 10.32.13.26
+  - host: 10.32.13.27
+  - host: 10.32.13.28
   - host: 10.32.255.17
   - host: 10.32.255.18
-  - host: 10.33.255.254
+  - host: 10.32.255.22
+  - host: 10.32.255.23
+  - host: 10.32.255.254
+  - host: 10.33.1.254
+  - host: 10.33.12.1
+  - host: 10.33.12.93
+  - host: 10.33.13.11
+  - host: 10.33.13.12
+  - host: 10.33.13.21
+  - host: 10.33.13.22
+  - host: 10.33.13.23
+  - host: 10.33.13.24
+  - host: 10.33.13.25
+  - host: 10.33.13.26
+  - host: 10.33.13.27
+  - host: 10.33.13.28
   - host: 10.33.255.1
-  - host: 10.30.31.144
+  - host: 10.33.255.254
+  - host: 10.182.57.51
 
-  - host: 10.33.255.2
-    commands:
-      - show running-config
-  - host: 10.30.61.20
+# 以下完全正常 不同密码或命令
+  - host: 10.30.31.143
     commands:
       - show running-config
   - host: 10.30.58.15
     commands:
       - show running-config
-  - host: 10.30.31.143
+  - host: 10.30.61.20
     commands:
       - show running-config
   - host: 10.30.70.33
     commands:
       - show running-config
+  - host: 10.32.12.94
+    password: BWCXljsm@2102
   - host: 10.32.255.132
     commands:
       - show running-config
+  - host: 10.33.12.94
+    password: BWCXljsm@2102
+  - host: 10.33.13.29
+    commands:
+      - show running-config
+  - host: 10.33.13.30
+    commands:
+      - show running-config
+  - host: 10.33.13.31
+    commands:
+      - show running-config
+  - host: 10.33.255.2
+    commands:
+      - show running-config
 
-# 以下勉强能跑
-  - host: 10.30.61.18
-    commands:
-      - display current-configuration
-  - host: 10.30.61.19
-    commands:
-      - display current-configuration
-  - host: 10.30.61.22
-    commands:
-      - display current-configuration
-  - host: 10.31.255.5
-    commands:
-      - display current-configuration
-  - host: 10.32.255.1
-    commands:
-      - display current-configuration
-  - host: 10.32.255.2
-    commands:
-      - display current-configuration
-  - host: 10.32.255.3
-    commands:
-      - display current-configuration
-  - host: 10.32.255.4
-    commands:
-      - display current-configuration
-  - host: 10.32.255.5
-    commands:
-      - display current-configuration
-  - host: 10.32.255.131
-    commands:
-      - display current-configuration
-  - host: 10.32.255.11
-    commands:
-      - display current-configuration
-  - host: 10.32.255.12
-    commands:
-      - display current-configuration
-  - host: 10.32.255.13
-    commands:
-      - display current-configuration
-  - host: 10.32.255.14
-    commands:
-      - display current-configuration
-  - host: 10.32.255.15
-    commands:
-      - display current-configuration
-  - host: 10.32.255.16
-    commands:
-      - display current-configuration
-  - host: 10.30.58.252
-    commands:
-      - display current-configuration
-  - host: 10.30.58.253
-    commands:
-      - display current-configuration
-  - host: 10.30.58.1
-    commands:
-      - display current-configuration
-  - host: 10.30.58.4
-    commands:
-      - display current-configuration
-  - host: 10.30.58.5
-    commands:
-      - display current-configuration
-  - host: 10.30.58.7
-    commands:
-      - display current-configuration
-  - host: 10.30.58.11
-    commands:
-      - display current-configuration
-  - host: 10.30.58.12
-    commands:
-      - display current-configuration
-  - host: 10.30.58.13
-    commands:
-      - display current-configuration
-  - host: 10.30.58.14
-    commands:
-      - display current-configuration
-  - host: 10.30.58.17
-    commands:
-      - display current-configuration
-  - host: 10.30.58.19
-    commands:
-      - display current-configuration
+# 以下勉强能跑,screen-length 0, 一条命令
   - host: 10.30.31.129
     commands:
       - display current-configuration
@@ -170,10 +127,49 @@ devices:
   - host: 10.30.31.142
     commands:
       - display current-configuration
-  - host: 10.30.70.252
+  - host: 10.30.58.1
     commands:
       - display current-configuration
-  - host: 10.30.70.253
+  - host: 10.30.58.4
+    commands:
+      - display current-configuration
+  - host: 10.30.58.5
+    commands:
+      - display current-configuration
+  - host: 10.30.58.7
+    commands:
+      - display current-configuration
+  - host: 10.30.58.11
+    commands:
+      - display current-configuration
+  - host: 10.30.58.12
+    commands:
+      - display current-configuration
+  - host: 10.30.58.13
+    commands:
+      - display current-configuration
+  - host: 10.30.58.14
+    commands:
+      - display current-configuration
+  - host: 10.30.58.17
+    commands:
+      - display current-configuration
+  - host: 10.30.58.19
+    commands:
+      - display current-configuration
+  - host: 10.30.58.252
+    commands:
+      - display current-configuration
+  - host: 10.30.58.253
+    commands:
+      - display current-configuration
+  - host: 10.30.61.18
+    commands:
+      - display current-configuration
+  - host: 10.30.61.19
+    commands:
+      - display current-configuration
+  - host: 10.30.61.22
     commands:
       - display current-configuration
   - host: 10.30.70.1
@@ -212,8 +208,67 @@ devices:
   - host: 10.30.70.31
     commands:
       - display current-configuration
+  - host: 10.30.70.252
+    commands:
+      - display current-configuration
+  - host: 10.30.70.253
+    commands:
+      - display current-configuration
+  - host: 10.31.255.5
+    commands:
+      - display current-configuration
+  - host: 10.32.12.93
+    commands:
+      - display current-configuration
+  - host: 10.32.255.1
+    commands:
+      - display current-configuration
+  - host: 10.32.255.2
+    commands:
+      - display current-configuration
+  - host: 10.32.255.3
+    commands:
+      - display current-configuration
+  - host: 10.32.255.4
+    commands:
+      - display current-configuration
+  - host: 10.32.255.5
+    commands:
+      - display current-configuration
+  - host: 10.32.255.11
+    commands:
+      - display current-configuration
+  - host: 10.32.255.12
+    commands:
+      - display current-configuration
+  - host: 10.32.255.13
+    commands:
+      - display current-configuration
+  - host: 10.32.255.14
+    commands:
+      - display current-configuration
+  - host: 10.32.255.15
+    commands:
+      - display current-configuration
+  - host: 10.32.255.16
+    commands:
+      - display current-configuration
+  - host: 10.32.255.131
+    commands:
+      - display current-configuration
   - host: 10.33.255.3
+    commands:
+      - display current-configuration
+  - host: 10.166.57.51
     commands:
       - display current-configuration
 
 
+#完全不行：
+#10.30.31.1 failed to send channel request
+#10.30.31.254 failed to send channel request
+#10.30.61.4 telnet
+#10.30.61.66 无线路由器
+#10.30.70.8 telnet
+#10.32.12.96 DNS
+#10.33.12.96 DNS
