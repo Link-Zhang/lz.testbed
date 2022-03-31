@@ -13,7 +13,7 @@
     <version>0.0.1.RELEASE</version>
 
     <properties>
-        <spring-boot-starter-web.version>2.3.12.RELEASE</spring-boot-starter-web.version>
+        <spring-boot-starter-web.version>2.5.12</spring-boot-starter-web.version>
         <spring-boot-starter-actuator.version>2.3.12.RELEASE</spring-boot-starter-actuator.version>
         <spring-boot-starter-security.version>2.3.12.RELEASE</spring-boot-starter-security.version>
         <jsch.version>0.1.55</jsch.version>
